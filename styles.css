@@ -8,6 +8,18 @@ main {
   display: flex;
 }
 
+h1 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 80px;
+}
+
+p {
+  font-size: 20px;
+}
+
 .player-left,
 .player-right {
   width: 25%;
