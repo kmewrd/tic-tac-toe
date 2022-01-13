@@ -1,7 +1,7 @@
 class Game {
 	constructor(startingPlayer) {
-		this.playerLeft = new Player("left", "x-icon.svg");
-		this.playerRight = new Player("right", "o-icon.svg");
+		this.playerLeft = new Player("left", "👾");
+		this.playerRight = new Player("right", "🤖");
 		this.startingPlayer = startingPlayer || this.playerLeft;
 		this.turn = startingPlayer || this.playerLeft;
     this.winner = null;
@@ -29,7 +29,7 @@ class Game {
 	}
 	placeToken(id) {
 		if (!this.board[id]) {
-			this.board[id] = this.turn.id;
+			this.board[id] = this.turn.token;
 			this.turn.squaresOccupied.push(id);
       this.checkForWinner();
 		}
