@@ -16,6 +16,16 @@ class Game {
 				CB: null,
 				CC: null
 		};
+    this.winningConditions = [
+      ["AA", "AB", "AC"],
+      ["BA", "BB", "BC"],
+      ["CA", "CB", "CC"],
+      ["AA", "BA", "BA"],
+      ["AB", "BB", "CB"],
+      ["AC", "BC", "CC"],
+      ["AA", "BB", "CC"],
+      ["AC", "BB", "CA"]
+    ];
 	}
 	placeToken(id) {
 		if (!this.board[id]) {
@@ -24,28 +34,18 @@ class Game {
       this.checkForWinnerOrDraw();
 		}
 	}
-  checkForWinningConfiguration() {
+  checkForWinningConditions() {
 	  var winner = false;
-	  var winningConfigurations = [
-	  ["AA", "AB", "AC"],
-	  ["BA", "BB", "BC"],
-	  ["CA", "CB", "CC"],
-	  ["AA", "BA", "BA"],
-	  ["AB", "BB", "CB"],
-	  ["AC", "BC", "CC"],
-	  ["AA", "BB", "CC"],
-	  ["AC", "BB", "CA"]
-	  ];
-	  for (var i = 0; i < winningConfigurations.length; i++) {
-		  if (winningConfigurations[i].every(square => this.turn.squaresOccupied.includes(square))) {
+	  for (var i = 0; i < this.winningConditions.length; i++) {
+		  if (this.winningConditions[i].every(square => this.turn.squaresOccupied.includes(square))) {
 		  winner = true;
 		  }
 	  }
-  return winner;
+    return winner;
   }
 	checkForWinnerOrDraw() {
     var boardSquares = Object.values(this.board);
-    if (this.checkForWinningConfiguration() || !boardSquares.includes(null)) {
+    if (this.checkForWinningConditions() || !boardSquares.includes(null)) {
       this.declareWinner();
     } else {
       this.switchPlayer();
@@ -53,11 +53,11 @@ class Game {
 	}
 	declareWinner() {
     var boardSquares = Object.values(this.board);
-    if (this.checkForWinningConfiguration()) {
+    if (this.checkForWinningConditions()) {
       this.turn.wins.push(this.board);
 		  this.winner = this.turn;
     }
-    if (!this.checkForWinningConfiguration() && !boardSquares.includes(null)) {
+    if (!this.checkForWinningConditions() && !boardSquares.includes(null)) {
       this.winner = "draw";
     }
 	}
