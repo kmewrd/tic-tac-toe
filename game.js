@@ -4,6 +4,7 @@ class Game {
 		this.playerRight = new Player("right", "o-icon.svg");
 		this.startingPlayer = startingPlayer || this.playerLeft;
 		this.turn = startingPlayer || this.playerLeft;
+    this.winner = null;
 		this.board = {
 				AA: null,
 				AB: null,
@@ -20,9 +21,8 @@ class Game {
 		if (!this.board[id]) {
 			this.board[id] = this.turn.id;
 			this.turn.squaresOccupied.push(id);
-      return true;
+      this.checkForWinnerOrDraw();
 		}
-    return false;
 	}
   checkForWinningConfiguration() {
 	  var winner = false;
@@ -47,14 +47,12 @@ class Game {
     var boardSquares = Object.values(this.board);
     if (this.checkForWinningConfiguration() || !boardSquares.includes(null)) {
       this.declareWinner();
-      return true;
     } else {
       this.switchPlayer();
-      return false;
     }
 	}
 	declareWinner() {
-		var boardSquares = Object.values(this.board);
+    var boardSquares = Object.values(this.board);
     if (this.checkForWinningConfiguration()) {
       this.turn.wins.push(this.board);
 		  this.winner = this.turn;
@@ -63,6 +61,14 @@ class Game {
       this.winner = "draw";
     }
 	}
+	switchPlayer() {
+		if (this.turn === this.playerLeft) {
+			return this.turn = this.playerRight;
+		}
+    if (this.turn === this.playerRight) {
+			return this.turn = this.playerLeft;
+		}
+	}
   endGame() {
     this.playerLeft.squaresOccupied = [];
     this.playerRight.squaresOccupied = [];
@@ -70,14 +76,6 @@ class Game {
 			return new Game(this.playerRight);
 		} else {
 			return new Game(this.playerLeft);
-		}
-	}
-	switchPlayer() {
-		if (!this.checkForWinningConfiguration() && this.turn === this.playerLeft) {
-			this.turn = this.playerRight;
-		}
-    if (!this.checkForWinningConfiguration() && this.turn === this.playerRight) {
-			this.turn = this.playerLeft;
 		}
 	}
 };
