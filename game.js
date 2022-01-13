@@ -31,36 +31,32 @@ class Game {
 		if (!this.board[id]) {
 			this.board[id] = this.turn.id;
 			this.turn.squaresOccupied.push(id);
-      this.checkForWinnerOrDraw();
+      this.checkForWinner();
 		}
 	}
-  checkForWinningConditions() {
-	  var winner = false;
+  checkForWinner() {
 	  for (var i = 0; i < this.winningConditions.length; i++) {
 		  if (this.winningConditions[i].every(square => this.turn.squaresOccupied.includes(square))) {
-		  winner = true;
+		  this.declareWinner();
 		  }
 	  }
-    return winner;
+    this.checkForDraw();
   }
-	checkForWinnerOrDraw() {
+	checkForDraw() {
     var boardSquares = Object.values(this.board);
-    if (this.checkForWinningConditions() || !boardSquares.includes(null)) {
-      this.declareWinner();
+    if (!boardSquares.includes(null)) {
+      this.declareDraw();
     } else {
       this.switchPlayer();
     }
 	}
 	declareWinner() {
-    var boardSquares = Object.values(this.board);
-    if (this.checkForWinningConditions()) {
-      this.turn.wins.push(this.board);
-		  this.winner = this.turn;
-    }
-    if (!this.checkForWinningConditions() && !boardSquares.includes(null)) {
-      this.winner = "draw";
-    }
-	}
+    this.turn.wins.push(this.board);
+		this.winner = this.turn;
+  }
+  declareDraw() {
+    this.winner = "draw";
+  }
 	switchPlayer() {
 		if (this.turn === this.playerLeft) {
 			return this.turn = this.playerRight;
