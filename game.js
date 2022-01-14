@@ -54,7 +54,7 @@ class Game {
   }
   declareWinner() {
     this.turn.wins.push(this.board);
-    this.winner = this.turn.id;
+    this.winner = this.turn;
   }
   declareDraw() {
     this.winner = "draw";
