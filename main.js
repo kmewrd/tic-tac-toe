@@ -54,6 +54,28 @@ function restartGame() {
       turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
       console.log("The board has been reset.");
       console.log(currentGame);
+      clearGameBoard();
     }, 3000);
   }
+}
+
+function clearGameBoard() {
+  gameBoard.innerHTML = "";
+  gameBoard.innerHTML += `
+  <div class="row-1">
+    <div class="game-board__square" id="AA"></div>
+    <div class="game-board__square" id="AB"></div>
+    <div class="game-board__square" id="AC"></div>
+  </div>
+  <div class="row-2">
+    <div class="game-board__square" id="BA"></div>
+    <div class="game-board__square" id="BB"></div>
+    <div class="game-board__square" id="BC"></div>
+  </div>
+  <div class="row-3">
+    <div class="game-board__square" id="CA"></div>
+    <div class="game-board__square" id="CB"></div>
+    <div class="game-board__square" id="CC"></div>
+  </div>
+  `
 }
