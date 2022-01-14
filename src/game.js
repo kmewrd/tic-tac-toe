@@ -44,7 +44,7 @@ class Game {
   }
   checkForDraw() {
     var boardSquares = Object.values(this.board);
-    if (!boardSquares.includes(null)) {
+    if (!boardSquares.includes(null) && this.winner === "draw") {
       this.declareDraw();
     } else {
       this.switchPlayer();
