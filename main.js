@@ -26,8 +26,13 @@ function acceptToken(e) {
 function updateTurn() {
   if (!currentGame.winner) {
     turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
-  } else {
-    turnTracker.innerText = `${currentGame.winner.token} is the winner!`;
+  }
+  if (currentGame.winner) {
+    if (currentGame.winner.id === "left" || currentGame.winner.id === "right") {
+      turnTracker.innerText = `${currentGame.winner.token} is the winner!`;
+    } else {
+      turnTracker.innerText = "It's a draw!";
+    }
   }
 }
 
