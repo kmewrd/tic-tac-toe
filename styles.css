@@ -39,11 +39,14 @@ p {
   width: 400px;
   height: 400px;
   border: 2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-board > * {
   display: flex;
-  justify-content: center;
 }
 
 .game-board__square {
