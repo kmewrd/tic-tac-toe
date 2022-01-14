@@ -20,7 +20,7 @@ class Game {
       ["AA", "AB", "AC"],
       ["BA", "BB", "BC"],
       ["CA", "CB", "CC"],
-      ["AA", "BA", "BA"],
+      ["AA", "BA", "CA"],
       ["AB", "BB", "CB"],
       ["AC", "BC", "CC"],
       ["AA", "BB", "CC"],
