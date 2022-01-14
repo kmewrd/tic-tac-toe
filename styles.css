@@ -2,6 +2,7 @@ body {
   background: linear-gradient(#99F7E9, #67E5F3, #609CEB);
   background-attachment: fixed;
   color: #ffffff;
+  font-family: Montserrat, sans-serif;
 }
 
 main {
@@ -10,6 +11,7 @@ main {
 
 h1 {
   font-size: 40px;
+  text-transform: uppercase;
 }
 
 h3 {
