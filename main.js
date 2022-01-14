@@ -17,7 +17,7 @@ function loadFirstGame() {
 };
 
 function acceptToken(e) {
-  if (!currentGame.winner && !currentGame.board[e.target.id]) {
+  if (!currentGame.winner && !currentGame.board[e.target.id] && e.target.classList.contains("game-board__square")) {
     e.target.innerText = currentGame.turn.token;
     currentGame.placeToken(e.target.id);
   }
