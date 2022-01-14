@@ -47,13 +47,9 @@ function updateWins() {
 
 function restartGame() {
   if (currentGame.winner) {
-    console.log("The game has a winner.");
-    console.log(currentGame);
     setTimeout(function() {
       currentGame.resetBoard();
       turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
-      console.log("The board has been reset.");
-      console.log(currentGame);
       clearGameBoard();
     }, 3000);
   }
