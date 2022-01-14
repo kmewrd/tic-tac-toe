@@ -35,11 +35,9 @@ class Game {
     }
   }
   checkForWinner() {
-    if (this.turn.squaresOccupied.length >= 3) {
-      for (var i = 0; i < this.winningConditions.length; i++) {
-        if (this.winningConditions[i].every(square => this.turn.squaresOccupied.includes(square))) {
-          this.declareWinner();
-        }
+    for (var i = 0; i < this.winningConditions.length; i++) {
+      if (this.winningConditions[i].every(square => this.turn.squaresOccupied.includes(square))) {
+        this.declareWinner();
       }
     }
     this.checkForDraw();
