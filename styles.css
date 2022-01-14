@@ -21,8 +21,11 @@ h2 {
   font-weight: 600;
 }
 
-h3 {
-  font-size: 80px;
+.player-icon {
+  margin-top: 250px;
+  margin-bottom: 20px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .player-right__wins,
