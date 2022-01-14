@@ -1,9 +1,9 @@
 class Game {
-  constructor(startingPlayer) {
+  constructor() {
     this.playerLeft = new Player("left", "👾");
     this.playerRight = new Player("right", "🤖");
-    this.startingPlayer = startingPlayer || this.playerLeft;
-    this.turn = startingPlayer || this.playerLeft;
+    this.startingPlayer = this.playerLeft;
+    this.turn = this.playerLeft;
     this.winner = null;
     this.board = {
       AA: null,
@@ -20,7 +20,7 @@ class Game {
       ["AA", "AB", "AC"],
       ["BA", "BB", "BC"],
       ["CA", "CB", "CC"],
-      ["AA", "BA", "BA"],
+      ["AA", "BA", "CA"],
       ["AB", "BB", "CB"],
       ["AC", "BC", "CC"],
       ["AA", "BB", "CC"],
@@ -65,13 +65,27 @@ class Game {
       return this.turn = this.playerLeft;
     }
   }
-  endGame() {
+  resetBoard() {
     this.playerLeft.squaresOccupied = [];
     this.playerRight.squaresOccupied = [];
+    this.winner = null;
+    this.board = {
+      AA: null,
+      AB: null,
+      AC: null,
+      BA: null,
+      BB: null,
+      BC: null,
+      CA: null,
+      CB: null,
+      CC: null
+    };
     if (this.startingPlayer === this.playerLeft) {
-      return new Game(this.playerRight);
+      this.turn = this.playerRight;
+      return this.startingPlayer = this.playerRight;
     } else {
-      return new Game(this.playerLeft);
+      this.turn = this.playerLeft;
+      return this.startingPlayer = this.playerLeft;
     }
   }
 };
