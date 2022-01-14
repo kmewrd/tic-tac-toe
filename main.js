@@ -2,13 +2,18 @@ var gameBoard = document.querySelector(".game-board");
 var turnTracker = document.querySelector(".turn-tracker");
 var playerLeftWins = document.querySelector(".player-left__wins");
 var playerRightWins = document.querySelector(".player-right__wins");
-var currentGame = new Game();
+var currentGame;
 
+window.addEventListener('load', loadFirstGame);
 gameBoard.addEventListener('click', function(e) {
   acceptToken(e);
   updateTurn();
   updateWins();
 });
+
+function loadFirstGame() {
+  currentGame = new Game();
+};
 
 function acceptToken(e) {
   if (!currentGame.winner && !currentGame.board[e.target.id]) {
