@@ -9,6 +9,7 @@ gameBoard.addEventListener('click', function(e) {
   acceptToken(e);
   updateTurn();
   updateWins();
+  restartGame();
 });
 
 function loadFirstGame() {
@@ -36,5 +37,18 @@ function updateWins() {
   }
   if (currentGame.winner && currentGame.winner.id === "right") {
     playerRightWins.innerText = `${currentGame.playerRight.wins.length} wins`;
+  }
+}
+
+function restartGame() {
+  if (currentGame.winner) {
+    console.log("The game has a winner.");
+    console.log(currentGame);
+    setTimeout(function() {
+      currentGame.resetBoard();
+      turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
+      console.log("The board has been reset.");
+      console.log(currentGame);
+    }, 3000);
   }
 }
