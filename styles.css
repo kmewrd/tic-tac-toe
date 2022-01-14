@@ -2,7 +2,7 @@ body {
   background: linear-gradient(#99F7E9, #67E5F3, #609CEB);
   background-attachment: fixed;
   color: #ffffff;
-  font-family: Montserrat, sans-serif;
+  font-family: "Brandon Grotesque", Montserrat, sans-serif;
 }
 
 main {
@@ -10,16 +10,26 @@ main {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 48px;
   text-transform: uppercase;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "Open Sans", "Brandon Grotesque", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 80px;
 }
 
-p {
-  font-size: 20px;
+.player-right__wins,
+.player-left__wins {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .player-left,
