@@ -18,18 +18,20 @@ function loadFirstGame() {
 
 function acceptToken(e) {
   if (!currentGame.winner && !currentGame.board[e.target.id] && e.target.classList.contains("game-board__square")) {
-    e.target.innerText = currentGame.turn.token;
+    e.target.innerHTML = `
+    <img alt="player ${currentGame.turn.id} token" class="token" src="${currentGame.turn.token}"/>
+    `;
     currentGame.placeToken(e.target.id);
   }
 }
 
 function updateTurn() {
   if (!currentGame.winner) {
-    turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
+    turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
   }
   if (currentGame.winner) {
-    if (currentGame.winner.id === "left" || currentGame.winner.id === "right") {
-      turnTracker.innerText = `${currentGame.winner.token} is the winner!`;
+    if (currentGame.winner.id === "X" || currentGame.winner.id === "O") {
+      turnTracker.innerText = `${currentGame.winner.id} is the winner!`;
     } else {
       turnTracker.innerText = "It's a draw!";
     }
@@ -37,10 +39,10 @@ function updateTurn() {
 }
 
 function updateWins() {
-  if (currentGame.winner && currentGame.winner.id === "left") {
+  if (currentGame.winner && currentGame.winner.id === "X") {
     playerLeftWins.innerText = `${currentGame.playerLeft.wins.length} wins`;
   }
-  if (currentGame.winner && currentGame.winner.id === "right") {
+  if (currentGame.winner && currentGame.winner.id === "O") {
     playerRightWins.innerText = `${currentGame.playerRight.wins.length} wins`;
   }
 }
@@ -49,7 +51,7 @@ function restartGame() {
   if (currentGame.winner) {
     setTimeout(function() {
       currentGame.resetBoard();
-      turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
+      turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
       clearGameBoard();
     }, 3000);
   }
@@ -59,19 +61,19 @@ function clearGameBoard() {
   gameBoard.innerHTML = "";
   gameBoard.innerHTML += `
   <div class="row-1">
-    <div class="game-board__square" id="AA"></div>
-    <div class="game-board__square" id="AB"></div>
-    <div class="game-board__square" id="AC"></div>
+    <div class="game-board__square light-blue" id="AA"></div>
+    <div class="game-board__square mid-blue" id="AB"></div>
+    <div class="game-board__square light-blue" id="AC"></div>
   </div>
   <div class="row-2">
-    <div class="game-board__square" id="BA"></div>
-    <div class="game-board__square" id="BB"></div>
-    <div class="game-board__square" id="BC"></div>
+    <div class="game-board__square mid-blue" id="BA"></div>
+    <div class="game-board__square coral" id="BB"></div>
+    <div class="game-board__square mid-blue" id="BC"></div>
   </div>
   <div class="row-3">
-    <div class="game-board__square" id="CA"></div>
-    <div class="game-board__square" id="CB"></div>
-    <div class="game-board__square" id="CC"></div>
+    <div class="game-board__square light-blue" id="CA"></div>
+    <div class="game-board__square mid-blue" id="CB"></div>
+    <div class="game-board__square light-blue" id="CC"></div>
   </div>
   `
 }
