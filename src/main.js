@@ -27,11 +27,11 @@ function acceptToken(e) {
 
 function updateTurn() {
   if (!currentGame.winner) {
-    turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
+    turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
   }
   if (currentGame.winner) {
-    if (currentGame.winner.id === "left" || currentGame.winner.id === "right") {
-      turnTracker.innerText = `${currentGame.winner.token} is the winner!`;
+    if (currentGame.winner.id === "X" || currentGame.winner.id === "O") {
+      turnTracker.innerText = `${currentGame.winner.id} is the winner!`;
     } else {
       turnTracker.innerText = "It's a draw!";
     }
@@ -39,10 +39,10 @@ function updateTurn() {
 }
 
 function updateWins() {
-  if (currentGame.winner && currentGame.winner.id === "left") {
+  if (currentGame.winner && currentGame.winner.id === "X") {
     playerLeftWins.innerText = `${currentGame.playerLeft.wins.length} wins`;
   }
-  if (currentGame.winner && currentGame.winner.id === "right") {
+  if (currentGame.winner && currentGame.winner.id === "O") {
     playerRightWins.innerText = `${currentGame.playerRight.wins.length} wins`;
   }
 }
@@ -51,7 +51,7 @@ function restartGame() {
   if (currentGame.winner) {
     setTimeout(function() {
       currentGame.resetBoard();
-      turnTracker.innerText = `It's ${currentGame.turn.token}'s turn!`;
+      turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
       clearGameBoard();
     }, 3000);
   }

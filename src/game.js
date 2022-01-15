@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerLeft = new Player("left", "./assets/x-icon.svg");
-    this.playerRight = new Player("right", "./assets/o-icon.svg");
+    this.playerLeft = new Player("X", "./assets/x-icon.svg");
+    this.playerRight = new Player("O", "./assets/o-icon.svg");
     this.startingPlayer = this.playerLeft;
     this.turn = this.playerLeft;
     this.winner = null;
