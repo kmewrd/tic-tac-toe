@@ -59,8 +59,7 @@ function restartGame() {
 };
 
 function clearGameBoard() {
-  gameBoard.innerHTML = "";
-  gameBoard.innerHTML += `
+  gameBoard.innerHTML = `
   <div class="row-1">
     <div class="game-board__square light-blue" id="AA"></div>
     <div class="game-board__square mid-blue" id="AB"></div>
