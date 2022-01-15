@@ -87,3 +87,8 @@ h2 {
   background-color: #ee6c4d;
   outline: 6px solid #ffffff;
 }
+
+.token {
+  max-width: 100px;
+  max-height: 100px;
+}
