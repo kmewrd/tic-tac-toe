@@ -27,13 +27,6 @@ class Game {
       ["AC", "BB", "CA"]
     ];
   }
-  placeToken(id) {
-    if (!this.board[id]) {
-      this.board[id] = this.turn.token;
-      this.turn.squaresOccupied.push(id);
-      this.checkForWinner();
-    }
-  }
   checkForWinner() {
     for (var i = 0; i < this.winningConditions.length; i++) {
       if (this.winningConditions[i].every(square => this.turn.squaresOccupied.includes(square))) {
