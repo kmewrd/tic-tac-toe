@@ -18,7 +18,9 @@ function loadFirstGame() {
 
 function acceptToken(e) {
   if (!currentGame.winner && !currentGame.board[e.target.id] && e.target.classList.contains("game-board__square")) {
-    e.target.innerText = currentGame.turn.token;
+    e.target.innerHTML = `
+    <img alt="player ${currentGame.turn.id} token" class="token" src="${currentGame.turn.token}"/>
+    `;
     currentGame.placeToken(e.target.id);
   }
 }
