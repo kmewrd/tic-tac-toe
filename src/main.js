@@ -21,7 +21,7 @@ function renderToken(e) {
     e.target.innerHTML = `
     <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
-    game.turn.placeToken(e.target.id, game);
+    game.turn.placeToken(game, e.target.id);
   }
 };
 
