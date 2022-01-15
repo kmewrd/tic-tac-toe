@@ -2,7 +2,7 @@ var gameBoard = document.querySelector(".game-board");
 var turnTracker = document.querySelector(".turn-tracker");
 var playerLeftWins = document.querySelector(".player-left__wins");
 var playerRightWins = document.querySelector(".player-right__wins");
-var currentGame;
+var game;
 
 window.addEventListener('load', loadFirstGame);
 gameBoard.addEventListener('click', function(e) {
@@ -13,25 +13,25 @@ gameBoard.addEventListener('click', function(e) {
 });
 
 function loadFirstGame() {
-  currentGame = new Game();
+  game = new Game();
 };
 
 function acceptToken(e) {
-  if (!currentGame.winner && !currentGame.board[e.target.id] && e.target.classList.contains("game-board__square")) {
+  if (!game.winner && !game.board[e.target.id] && e.target.classList.contains("game-board__square")) {
     e.target.innerHTML = `
-    <img alt="player ${currentGame.turn.id} token" class="token" src="${currentGame.turn.token}"/>
+    <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
-    currentGame.placeToken(e.target.id);
+    game.placeToken(e.target.id);
   }
 }
 
 function updateTurn() {
-  if (!currentGame.winner) {
-    turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
+  if (!game.winner) {
+    turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
   }
-  if (currentGame.winner) {
-    if (currentGame.winner.id === "X" || currentGame.winner.id === "O") {
-      turnTracker.innerText = `${currentGame.winner.id} is the winner!`;
+  if (game.winner) {
+    if (game.winner.id === "X" || game.winner.id === "O") {
+      turnTracker.innerText = `${game.winner.id} is the winner!`;
     } else {
       turnTracker.innerText = "It's a draw!";
     }
@@ -39,19 +39,19 @@ function updateTurn() {
 }
 
 function updateWins() {
-  if (currentGame.winner && currentGame.winner.id === "X") {
-    playerLeftWins.innerText = `${currentGame.playerLeft.wins.length} wins`;
+  if (game.winner && game.winner.id === "X") {
+    playerLeftWins.innerText = `${game.playerLeft.wins.length} wins`;
   }
-  if (currentGame.winner && currentGame.winner.id === "O") {
-    playerRightWins.innerText = `${currentGame.playerRight.wins.length} wins`;
+  if (game.winner && game.winner.id === "O") {
+    playerRightWins.innerText = `${game.playerRight.wins.length} wins`;
   }
 }
 
 function restartGame() {
-  if (currentGame.winner) {
+  if (game.winner) {
     setTimeout(function() {
-      currentGame.resetBoard();
-      turnTracker.innerText = `It's ${currentGame.turn.id}'s turn!`;
+      game.resetBoard();
+      turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
       clearGameBoard();
     }, 3000);
   }
