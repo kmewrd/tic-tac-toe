@@ -4,26 +4,26 @@ var playerLeftWins = document.querySelector(".player-left__wins");
 var playerRightWins = document.querySelector(".player-right__wins");
 var game;
 
-window.addEventListener('load', loadFirstGame);
+window.addEventListener('load', loadGame);
 gameBoard.addEventListener('click', function(e) {
-  acceptToken(e);
+  renderToken(e);
   updateTurn();
   updateWins();
   restartGame();
 });
 
-function loadFirstGame() {
+function loadGame() {
   game = new Game();
 };
 
-function acceptToken(e) {
+function renderToken(e) {
   if (!game.winner && !game.board[e.target.id] && e.target.classList.contains("game-board__square")) {
     e.target.innerHTML = `
     <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
     game.placeToken(e.target.id);
   }
-}
+};
 
 function updateTurn() {
   if (!game.winner) {
@@ -36,7 +36,7 @@ function updateTurn() {
       turnTracker.innerText = "It's a draw!";
     }
   }
-}
+};
 
 function updateWins() {
   if (game.winner && game.winner.id === "X") {
@@ -45,7 +45,7 @@ function updateWins() {
   if (game.winner && game.winner.id === "O") {
     playerRightWins.innerText = `${game.playerRight.wins.length} wins`;
   }
-}
+};
 
 function restartGame() {
   if (game.winner) {
@@ -55,7 +55,7 @@ function restartGame() {
       clearGameBoard();
     }, 3000);
   }
-}
+};
 
 function clearGameBoard() {
   gameBoard.innerHTML = "";
@@ -76,4 +76,4 @@ function clearGameBoard() {
     <div class="game-board__square light-blue" id="CC"></div>
   </div>
   `
-}
+};
