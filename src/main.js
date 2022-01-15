@@ -51,6 +51,7 @@ function restartGame() {
   if (game.winner) {
     setTimeout(function() {
       game.resetBoard();
+      game.switchStartingPlayer();
       turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
       clearGameBoard();
     }, 3000);

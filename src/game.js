@@ -80,6 +80,8 @@ class Game {
       CB: null,
       CC: null
     };
+  }
+  switchStartingPlayer() {
     if (this.startingPlayer === "left") {
       this.turn = this.playerRight;
       return this.startingPlayer = "right";
