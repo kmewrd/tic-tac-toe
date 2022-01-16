@@ -1,6 +1,8 @@
 # Tic Tac Toe
 A simple tic tac toe game for two players. Place your symbol in a blank square until there are three in a row or there is a draw.
 
+<img width="1440" alt="Screen Shot 2022-01-16 at 11 30 53 AM" src="https://user-images.githubusercontent.com/79027364/149671021-1180d53d-e6be-433d-8578-5f040fd686bd.png">
+
 #### Tech
 
 This site was built using JavaScript, HTML, and CSS. The main functionality of the site is created through the Game and Player classes. All DOM manipulation is handled in the main JavaScript file.
