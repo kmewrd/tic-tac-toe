@@ -5,10 +5,10 @@ A simple tic tac toe game for two players. Place your symbol in a blank square u
 
 ## How to Run
 
-1. Fork the repository.
-2. Clone down your new, forked repo.
-3. `cd` into the repository.
-4. Type `open index.html` from the command line.
+1. Fork the repository
+2. Clone down your new, forked repo
+3. `cd` into the repository
+4. Type `open index.html` from the command line
 
 ## About This Game
 
