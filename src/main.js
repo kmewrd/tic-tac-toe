@@ -7,9 +7,7 @@ var game;
 window.addEventListener('load', loadGame);
 gameBoard.addEventListener('click', function(e) {
   renderToken(e);
-  updateTurn();
   updateWins();
-  restartGame();
 });
 
 function loadGame() {
@@ -22,6 +20,7 @@ function renderToken(e) {
     <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
     game.turn.placeToken(game, e.target.id);
+    updateTurn();
   }
 };
 
@@ -35,6 +34,7 @@ function updateTurn() {
     } else {
       turnTracker.innerText = "It's a draw!";
     }
+    restartGame();
   }
 };
 
