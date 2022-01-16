@@ -28,12 +28,12 @@ function updateTurn() {
   if (!game.winner) {
     turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
   }
-  if (game.winner) {
-    if (game.winner.id === "X" || game.winner.id === "O") {
-      turnTracker.innerText = `${game.winner.id} is the winner!`;
-    } else {
-      turnTracker.innerText = "It's a draw!";
-    }
+  if (game.winner && (game.winner.id === "X" || game.winner.id === "O")) {
+    turnTracker.innerText = `${game.winner.id} is the winner!`;
+    restartGame();
+  }
+  if (game.winner && game.winner === "draw") {
+    turnTracker.innerText = "It's a draw!";
     restartGame();
   }
 };
