@@ -2,7 +2,7 @@ class Game {
   constructor() {
     this.playerLeft = new Player("X", "./assets/x-icon.svg");
     this.playerRight = new Player("O", "./assets/o-icon.svg");
-    this.startingPlayer = this.playerLeft;
+    this.startingPlayer = "left";
     this.turn = this.playerLeft;
     this.winner = null;
     this.board = {
@@ -26,13 +26,6 @@ class Game {
       ["AA", "BB", "CC"],
       ["AC", "BB", "CA"]
     ];
-  }
-  placeToken(id) {
-    if (!this.board[id]) {
-      this.board[id] = this.turn.token;
-      this.turn.squaresOccupied.push(id);
-      this.checkForWinner();
-    }
   }
   checkForWinner() {
     for (var i = 0; i < this.winningConditions.length; i++) {
@@ -80,12 +73,14 @@ class Game {
       CB: null,
       CC: null
     };
-    if (this.startingPlayer === this.playerLeft) {
+  }
+  switchStartingPlayer() {
+    if (this.startingPlayer === "left") {
       this.turn = this.playerRight;
-      return this.startingPlayer = this.playerRight;
+      return this.startingPlayer = "right";
     } else {
       this.turn = this.playerLeft;
-      return this.startingPlayer = this.playerLeft;
+      return this.startingPlayer = "left";
     }
   }
 };
