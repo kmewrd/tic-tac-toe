@@ -16,7 +16,13 @@ This site was built by [Kim Ward](https://github.com/kmewrd) as a Mod 1 solo pro
   - Add local storage that allows wins and theme choice to persist after page reload
 	- Add the option increase the size of your board to 4 x 4, 5 x 5, and 6 x 6
 
+#### Design Inspiration
+
+  - Board: [Tic Tac Toe by Palmi](https://dribbble.com/shots/5536601-Tic-Tac-Toe)
+  - Colors: [Coolors](https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241)
+
 ## How to Run
+
 1. Fork the repository.
 2. Clone down your new, forked repo.
 3. `cd` into the repository.
