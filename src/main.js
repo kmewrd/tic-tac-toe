@@ -21,6 +21,8 @@ function renderToken(e) {
     `;
     game.turn.placeToken(game, e.target.id);
     updateTurn();
+  } else {
+    flashToken(e);
   }
 };
 
@@ -76,4 +78,13 @@ function clearGameBoard() {
     <div class="game-board__square light-blue" id="CC"></div>
   </div>
   `
+};
+
+function flashToken(e) {
+  if (!game.winner) {
+    e.target.classList.add("game-board__square--filled");
+    setTimeout(function() {
+      e.target.classList.remove("game-board__square--filled");
+    }, 500);
+  }
 };

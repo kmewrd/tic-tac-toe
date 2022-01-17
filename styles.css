@@ -73,6 +73,21 @@ h2 {
   max-height: 100px;
 }
 
+.game-board__square--filled {
+  animation: flash 0.5s ease;
+}
+
+@keyframes flash {
+  50% {
+    transform: scale(0.9);
+    opacity: 50%;
+  }
+  100 % {
+    transform: scale(1.0);
+    opacity: 100%;
+  }
+}
+
 /* || Player Sidebar Styles */
 
 .player-icon {
@@ -96,6 +111,8 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
+/* || Media Queries */
 
 @media (max-width: 1024px) {
   .player-icon {
