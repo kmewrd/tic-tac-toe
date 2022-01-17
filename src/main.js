@@ -1,5 +1,5 @@
 var gameBoard = document.querySelector(".game-board");
-var turnTracker = document.querySelector(".turn-tracker");
+var gameTracker = document.querySelector(".game-tracker");
 var playerLeftWins = document.querySelector(".player-left__wins");
 var playerRightWins = document.querySelector(".player-right__wins");
 var game;
@@ -20,21 +20,21 @@ function renderToken(e) {
     <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
     game.turn.placeToken(game, e.target.id);
-    updateTurn();
+    updateGameStatus();
   } else {
     flashToken(e);
   }
 };
 
-function updateTurn() {
+function updateGameStatus() {
   if (game.winner && (game.winner.id === "X" || game.winner.id === "O")) {
-    turnTracker.innerText = `${game.winner.id} is the winner!`;
+    gameTracker.innerText = `${game.winner.id} is the winner!`;
     restartGame();
   } else if (game.winner && game.winner === "draw") {
-    turnTracker.innerText = "It's a draw!";
+    gameTracker.innerText = "It's a draw!";
     restartGame();
   } else {
-    turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
+    gameTracker.innerText = `It's ${game.turn.id}'s turn!`;
   }
 };
 
