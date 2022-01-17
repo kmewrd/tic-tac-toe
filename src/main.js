@@ -1,5 +1,5 @@
 var gameBoard = document.querySelector(".game-board");
-var gameTracker = document.querySelector(".game-tracker");
+var gameStatus = document.querySelector(".game-status");
 var playerLeftWins = document.querySelector(".player-left__wins");
 var playerRightWins = document.querySelector(".player-right__wins");
 var game;
@@ -28,13 +28,13 @@ function renderToken(e) {
 
 function updateGameStatus() {
   if (game.winner && (game.winner.id === "X" || game.winner.id === "O")) {
-    gameTracker.innerText = `${game.winner.id} is the winner!`;
+    gameStatus.innerText = `${game.winner.id} is the winner!`;
     restartGame();
   } else if (game.winner && game.winner === "draw") {
-    gameTracker.innerText = "It's a draw!";
+    gameStatus.innerText = "It's a draw!";
     restartGame();
   } else {
-    gameTracker.innerText = `It's ${game.turn.id}'s turn!`;
+    gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
   }
 };
 
@@ -52,7 +52,7 @@ function restartGame() {
     setTimeout(function() {
       game.resetBoard();
       game.switchStartingPlayer();
-      turnTracker.innerText = `It's ${game.turn.id}'s turn!`;
+      gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
       clearGameBoard();
     }, 3000);
   }
