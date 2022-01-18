@@ -79,7 +79,7 @@ function clearGameBoard() {
 };
 
 function flashToken(e) {
-  if (!game.winner) {
+  if (!game.winner && e.target.classList.contains("token")) {
     e.target.classList.add("game-board-square--filled");
     setTimeout(function() {
       e.target.classList.remove("game-board-square--filled");
