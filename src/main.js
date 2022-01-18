@@ -1,3 +1,7 @@
+var gridThreeSelection = document.getElementById("gridThree");
+var gridFourSelection = document.getElementById("gridFour");
+var gridFiveSelection = document.getElementById("gridFive");
+var startButton = document.querySelector(".js-start-button");
 var gameBoard = document.querySelector(".js-game-board");
 var gameStatus = document.querySelector(".js-game-status");
 var playerLeftWins = document.querySelector(".js-player-left-wins");
