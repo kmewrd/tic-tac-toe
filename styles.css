@@ -41,11 +41,11 @@ h2 {
   align-items: center;
 }
 
-.game-board > * {
+.game-board-row {
   display: flex;
 }
 
-.game-board__square {
+.game-board-square {
   width: 140px;
   height: 140px;
   display: flex;
@@ -73,7 +73,7 @@ h2 {
   max-height: 100px;
 }
 
-.game-board__square--filled {
+.game-board-square--filled {
   animation: flash 0.5s ease;
 }
 
@@ -97,8 +97,8 @@ h2 {
   max-height: 200px;
 }
 
-.player-right__wins,
-.player-left__wins {
+.player-right-wins,
+.player-left-wins {
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 900;

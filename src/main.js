@@ -1,7 +1,7 @@
 var gameBoard = document.querySelector(".game-board");
 var gameStatus = document.querySelector(".game-status");
-var playerLeftWins = document.querySelector(".player-left__wins");
-var playerRightWins = document.querySelector(".player-right__wins");
+var playerLeftWins = document.querySelector(".player-left-wins");
+var playerRightWins = document.querySelector(".player-right-wins");
 var game;
 
 window.addEventListener('load', loadGame);
@@ -15,7 +15,7 @@ function loadGame() {
 };
 
 function renderToken(e) {
-  if (!game.winner && !game.board[e.target.id] && e.target.classList.contains("game-board__square")) {
+  if (!game.winner && !game.board[e.target.id] && e.target.classList.contains("game-board-square")) {
     e.target.innerHTML = `
     <img alt="player ${game.turn.id} token" class="token" src="${game.turn.token}"/>
     `;
@@ -60,29 +60,29 @@ function restartGame() {
 
 function clearGameBoard() {
   gameBoard.innerHTML = `
-  <div class="row-1">
-    <div class="game-board__square light-blue" id="AA"></div>
-    <div class="game-board__square mid-blue" id="AB"></div>
-    <div class="game-board__square light-blue" id="AC"></div>
+  <div class="game-board-row">
+    <div class="game-board-square light-blue" id="AA"></div>
+    <div class="game-board-square mid-blue" id="AB"></div>
+    <div class="game-board-square light-blue" id="AC"></div>
   </div>
-  <div class="row-2">
-    <div class="game-board__square mid-blue" id="BA"></div>
-    <div class="game-board__square coral" id="BB"></div>
-    <div class="game-board__square mid-blue" id="BC"></div>
+  <div class="game-board-row">
+    <div class="game-board-square mid-blue" id="BA"></div>
+    <div class="game-board-square coral" id="BB"></div>
+    <div class="game-board-square mid-blue" id="BC"></div>
   </div>
-  <div class="row-3">
-    <div class="game-board__square light-blue" id="CA"></div>
-    <div class="game-board__square mid-blue" id="CB"></div>
-    <div class="game-board__square light-blue" id="CC"></div>
+  <div class="game-board-row">
+    <div class="game-board-square light-blue" id="CA"></div>
+    <div class="game-board-square mid-blue" id="CB"></div>
+    <div class="game-board-square light-blue" id="CC"></div>
   </div>
   `
 };
 
 function flashToken(e) {
   if (!game.winner) {
-    e.target.classList.add("game-board__square--filled");
+    e.target.classList.add("game-board-square--filled");
     setTimeout(function() {
-      e.target.classList.remove("game-board__square--filled");
+      e.target.classList.remove("game-board-square--filled");
     }, 500);
   }
 };
