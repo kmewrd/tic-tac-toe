@@ -87,3 +87,11 @@ function flashToken(e) {
     }, 500);
   }
 };
+
+function show(element) {
+  element.classList.add("hidden");
+};
+
+function hide(element) {
+  element.classList.remove("hidden");
+};
