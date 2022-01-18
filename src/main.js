@@ -16,12 +16,15 @@ gameBoard.addEventListener('click', function(e) {
 function loadGame() {
   if (gridThreeSelection.checked) {
 		game = new Game(3);
+    createGameBoard(3);
 	}
 	if (gridFourSelection.checked) {
 		game = new Game(4);
+    createGameBoard(4);
   }
 	if (gridFiveSelection.checked) {
 		game = new Game(5);
+    createGameBoard(5);
 	}
 };
 
@@ -70,24 +73,96 @@ function restartGame() {
   }
 };
 
-function renderGameBoard() {
-  gameBoard.innerHTML = `
-  <div class="game-board-row">
-    <div class="game-board-square light-blue" id="AA"></div>
-    <div class="game-board-square mid-blue" id="AB"></div>
-    <div class="game-board-square light-blue" id="AC"></div>
-  </div>
-  <div class="game-board-row">
-    <div class="game-board-square mid-blue" id="BA"></div>
-    <div class="game-board-square coral" id="BB"></div>
-    <div class="game-board-square mid-blue" id="BC"></div>
-  </div>
-  <div class="game-board-row">
-    <div class="game-board-square light-blue" id="CA"></div>
-    <div class="game-board-square mid-blue" id="CB"></div>
-    <div class="game-board-square light-blue" id="CC"></div>
-  </div>
-  `
+function createGameBoard(gridSize) {
+  if (gridSize === 3) {
+		gameBoard.classList.add("grid-3");
+		gameBoard.innerHTML = `
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="AA"></div>
+	    <div class="game-board-square mid-blue" id="AB"></div>
+	    <div class="game-board-square light-blue" id="AC"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square mid-blue" id="BA"></div>
+	    <div class="game-board-square coral" id="BB"></div>
+	    <div class="game-board-square mid-blue" id="BC"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="CA"></div>
+	    <div class="game-board-square mid-blue" id="CB"></div>
+	    <div class="game-board-square light-blue" id="CC"></div>
+	  </div>
+	  `
+	}
+	if (gridSize === 4) {
+		gameBoard.classList.add("grid-4");
+		gameBoard.innerHTML = `
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="AA"></div>
+	    <div class="game-board-square mid-blue" id="AB"></div>
+	    <div class="game-board-square light-blue" id="AC"></div>
+			<div class="game-board-square mid-blue" id="AD"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square mid-blue" id="BA"></div>
+	    <div class="game-board-square light-blue" id="BB"></div>
+	    <div class="game-board-square mid-blue" id="BC"></div>
+			<div class="game-board-square light-blue" id="BD"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="CA"></div>
+	    <div class="game-board-square mid-blue" id="CB"></div>
+	    <div class="game-board-square light-blue" id="CC"></div>
+			<div class="game-board-square mid-blue" id="CD"></div>
+	  </div>
+		<div class="game-board-row">
+	    <div class="game-board-square mid-blue" id="DA"></div>
+	    <div class="game-board-square light-blue" id="DB"></div>
+	    <div class="game-board-square mid-blue" id="DC"></div>
+			<div class="game-board-square light-blue" id="DD"></div>
+	  </div>
+	  `
+	}
+	if (gridSize === 5) {
+		gameBoard.classList.add("grid-5");
+		gameBoard.innerHTML = `
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="AA"></div>
+	    <div class="game-board-square mid-blue" id="AB"></div>
+	    <div class="game-board-square light-blue" id="AC"></div>
+			<div class="game-board-square mid-blue" id="AD"></div>
+			<div class="game-board-square light-blue" id="AE"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square mid-blue" id="BA"></div>
+	    <div class="game-board-square light-blue" id="BB"></div>
+	    <div class="game-board-square mid-blue" id="BC"></div>
+			<div class="game-board-square light-blue" id="BD"></div>
+			<div class="game-board-square mid-blue" id="BE"></div>
+	  </div>
+	  <div class="game-board-row">
+	    <div class="game-board-square light-blue" id="CA"></div>
+	    <div class="game-board-square mid-blue" id="CB"></div>
+	    <div class="game-board-square coral" id="CC"></div>
+			<div class="game-board-square mid-blue" id="CD"></div>
+			<div class="game-board-square light-blue" id="CE"></div>
+	  </div>
+		<div class="game-board-row">
+	    <div class="game-board-square mid-blue" id="DA"></div>
+	    <div class="game-board-square light-blue" id="DB"></div>
+	    <div class="game-board-square mid-blue" id="DC"></div>
+			<div class="game-board-square light-blue" id="DD"></div>
+			<div class="game-board-square mid-blue" id="DE"></div>
+	  </div>
+		<div class="game-board-row">
+	    <div class="game-board-square light-blue" id="EA"></div>
+	    <div class="game-board-square mid-blue" id="EB"></div>
+	    <div class="game-board-square light-blue" id="EC"></div>
+			<div class="game-board-square mid-blue" id="ED"></div>
+			<div class="game-board-square light-blue" id="EE"></div>
+	  </div>
+	  `
+	}
 };
 
 function flashToken(e) {
