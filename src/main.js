@@ -11,6 +11,7 @@ gameBoard.addEventListener('click', function(e) {
 
 function loadGame() {
   game = new Game();
+  renderGameBoard();
 };
 
 function renderToken(e) {
@@ -52,13 +53,13 @@ function restartGame() {
     setTimeout(function() {
       game.resetBoard();
       game.switchStartingPlayer();
-      clearGameBoard();
+      renderGameBoard();
       gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
     }, 3000);
   }
 };
 
-function clearGameBoard() {
+function renderGameBoard() {
   gameBoard.innerHTML = `
   <div class="game-board-row">
     <div class="game-board-square light-blue" id="AA"></div>
