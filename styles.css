@@ -76,6 +76,10 @@ h2 {
   animation: flash 0.5s ease;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes flash {
   50% {
     transform: scale(0.9);
