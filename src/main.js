@@ -13,6 +13,7 @@ var game;
 startButton.addEventListener('click', function(e) {
   e.preventDefault();
   loadGame();
+  resetCheckboxes();
   hide(selectionBox);
   show(gameStatus);
   show(gameBoard);
@@ -196,4 +197,10 @@ function show(element) {
 
 function hide(element) {
   element.classList.add("hidden");
+};
+
+function resetCheckboxes() {
+  gridThreeSelection.checked = false;
+  gridFourSelection.checked = false;
+  gridFiveSelection.checked = false;
 };
