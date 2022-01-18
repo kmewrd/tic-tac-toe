@@ -1,3 +1,4 @@
+var selectionBox = document.querySelector(".selection-box");
 var gridThreeSelection = document.getElementById("gridThree");
 var gridFourSelection = document.getElementById("gridFour");
 var gridFiveSelection = document.getElementById("gridFive");
@@ -8,7 +9,14 @@ var playerLeftWins = document.querySelector(".js-player-left-wins");
 var playerRightWins = document.querySelector(".js-player-right-wins");
 var game;
 
-startButton.addEventListener('load', loadGame);
+startButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  loadGame();
+  hide(selectionBox);
+  show(gameStatus);
+  show(gameBoard);
+});
+
 gameBoard.addEventListener('click', function(e) {
   renderToken(e);
 });
@@ -67,7 +75,7 @@ function restartGame() {
     setTimeout(function() {
       game.resetBoard();
       game.switchStartingPlayer();
-      renderGameBoard();
+      createGameBoard(game.gridSize);
       gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
     }, 3000);
   }
@@ -175,9 +183,9 @@ function flashToken(e) {
 };
 
 function show(element) {
-  element.classList.add("hidden");
+  element.classList.remove("hidden");
 };
 
 function hide(element) {
-  element.classList.remove("hidden");
+  element.classList.add("hidden");
 };
