@@ -35,6 +35,7 @@ button {
   width: 142px;
   height: 36px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* || Game Board Styles */
@@ -124,6 +125,11 @@ button {
 
 .grid-selection-heading {
   margin: 0;
+}
+
+.new-game-button {
+  width: 200px;
+  margin: 30px;
 }
 
 .hidden {
