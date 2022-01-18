@@ -7,7 +7,6 @@ var game;
 window.addEventListener('load', loadGame);
 gameBoard.addEventListener('click', function(e) {
   renderToken(e);
-  updateWins();
 });
 
 function loadGame() {
@@ -29,6 +28,7 @@ function renderToken(e) {
 function updateGameStatus() {
   if (game.winner && (game.winner.id === "X" || game.winner.id === "O")) {
     gameStatus.innerText = `${game.winner.id} is the winner!`;
+    updateWins();
     restartGame();
   } else if (game.winner && game.winner === "draw") {
     gameStatus.innerText = "It's a draw!";
