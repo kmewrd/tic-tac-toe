@@ -25,6 +25,18 @@ label {
   font-size: 20px;
 }
 
+button {
+  border: 0;
+  font-family: "Brandon Grotesque", Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+  background-color: #ee6c4d;
+  width: 142px;
+  height: 36px;
+  text-transform: uppercase;
+}
+
 /* || Game Board Styles */
 
 .game {
