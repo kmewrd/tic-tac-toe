@@ -57,6 +57,21 @@ button {
   align-items: center;
 }
 
+.grid-three {
+  width: 420px;
+  height: 420px;
+}
+
+.grid-4 {
+  width: 560px;
+  height: 560px;
+}
+
+.grid-5 {
+  width: 600px;
+  height: 600px;
+}
+
 .game-board-row {
   display: flex;
 }
