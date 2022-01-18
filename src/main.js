@@ -28,7 +28,7 @@ function renderToken(e) {
 function updateGameStatus() {
   if (game.winner && (game.winner.id === "X" || game.winner.id === "O")) {
     gameStatus.innerText = `${game.winner.id} is the winner!`;
-    updateWins();
+    updateWins(game.winner);
     restartGame();
   } else if (game.winner && game.winner === "draw") {
     gameStatus.innerText = "It's a draw!";
@@ -38,11 +38,11 @@ function updateGameStatus() {
   }
 };
 
-function updateWins() {
-  if (game.winner && game.winner.id === "X") {
+function updateWins(player) {
+  if (player.id === "X") {
     playerLeftWins.innerText = `${game.playerLeft.wins.length} wins`;
   }
-  if (game.winner && game.winner.id === "O") {
+  if (player.id === "O") {
     playerRightWins.innerText = `${game.playerRight.wins.length} wins`;
   }
 };
