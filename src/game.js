@@ -93,12 +93,12 @@ class Game {
   	    ["BA", "BB", "BC", "BD", "BE"],
   	    ["CA", "CB", "CC", "CD", "CE"],
   			["DA", "DB", "DC", "DD", "DE"],
-  			["EA", "EB", "EC", "ED", "EE"];
+  			["EA", "EB", "EC", "ED", "EE"],
   	    ["AA", "BA", "CA", "DA", "EA"],
         ["AB", "BB", "CB", "DB", "EB"],
         ["AC", "BC", "CC", "DC", "EC"],
   			["AD", "BD", "CD", "DD", "ED"],
-  			["AE", "BE", "CE", "DE", "EE"];
+  			["AE", "BE", "CE", "DE", "EE"],
   	    ["AA", "BB", "CC", "DD", "EE"],
   	    ["AE", "BD", "CC", "DB", "EA"]
   	  ];
