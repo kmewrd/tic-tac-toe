@@ -21,27 +21,7 @@ h2 {
   font-weight: 600;
 }
 
-.player-icon {
-  margin-top: 250px;
-  margin-bottom: 20px;
-  max-width: 200px;
-  max-height: 200px;
-}
-
-.player-right__wins,
-.player-left__wins {
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.player-left,
-.player-right {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* || Game Board Styles */
 
 .game {
   width: 50%;
@@ -61,18 +41,17 @@ h2 {
   align-items: center;
 }
 
-.game-board > * {
+.game-board-row {
   display: flex;
 }
 
-.game-board__square {
+.game-board-square {
   width: 140px;
   height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 3px;
-  font-size: 60px;
 }
 
 .light-blue {
@@ -91,4 +70,91 @@ h2 {
 .token {
   max-width: 100px;
   max-height: 100px;
+}
+
+.game-board-square--filled {
+  animation: flash 0.5s ease;
+}
+
+@keyframes flash {
+  50% {
+    transform: scale(0.9);
+    opacity: 50%;
+  }
+  100 % {
+    transform: scale(1.0);
+    opacity: 100%;
+  }
+}
+
+/* || Player Sidebar Styles */
+
+.player-sidebar {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-icon {
+  margin-top: 250px;
+  margin-bottom: 20px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.player-wins {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* || Media Queries */
+
+@media (max-width: 1024px) {
+  .player-icon {
+    margin-top: 300px;
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 820px) {
+  main {
+    flex-direction: column;
+  }
+
+  h1 {
+    margin: 20px 0px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin: 20px 0px;
+  }
+
+  .game {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .player-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .player-icon {
+    margin-top: 20px;
+    max-width: 125px;
+    max-height: 125px;
+  }
+
+  .player-left {
+    order: 2;
+  }
+
+  .player-right {
+    order: 3;
+  }
 }

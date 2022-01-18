@@ -5,10 +5,10 @@ class Player {
     this.squaresOccupied = [];
     this.wins = [];
   }
-  placeToken(game, id) {
-    if (!game.board[id]) {
-      game.board[id] = game.turn.token;
-      game.turn.squaresOccupied.push(id);
+  placeToken(game, squareId) {
+    if (!game.board[squareId]) {
+      game.board[squareId] = game.turn.token;
+      game.turn.squaresOccupied.push(squareId);
       game.checkForWinner();
     }
   }

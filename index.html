@@ -8,34 +8,19 @@
 </head>
 <body>
   <main>
-    <section class="player-left">
+    <section class="player-sidebar">
       <img alt="player x icon" class="player-icon" src="assets/x-icon.svg"/>
-      <h3 class="player-left__wins">0 wins</h3>
+      <h3 class="player-wins js-player-left-wins">0 wins</h3>
     </section>
     <section class="game">
       <h1>Tic Tac Toe</h1>
-      <h2 class="turn-tracker">It's X's turn!</h2>
-      <div class="game-board">
-        <div class="row-1">
-          <div class="game-board__square light-blue" id="AA"></div>
-          <div class="game-board__square mid-blue" id="AB"></div>
-          <div class="game-board__square light-blue" id="AC"></div>
-        </div>
-        <div class="row-2">
-          <div class="game-board__square mid-blue" id="BA"></div>
-          <div class="game-board__square coral" id="BB"></div>
-          <div class="game-board__square mid-blue" id="BC"></div>
-        </div>
-        <div class="row-3">
-          <div class="game-board__square light-blue" id="CA"></div>
-          <div class="game-board__square mid-blue" id="CB"></div>
-          <div class="game-board__square light-blue" id="CC"></div>
-        </div>
+      <h2 class="game-status js-game-status">It's X's turn!</h2>
+      <div class="game-board js-game-board">
       </div>
     </section>
-    <section class="player-right">
+    <section class="player-sidebar">
       <img alt="player o icon" class="player-icon" src="assets/o-icon.svg"/>
-      <h3 class="player-right__wins">0 wins</h3>
+      <h3 class="player-wins js-player-right-wins">0 wins</h3>
     </section>
   </main>
   <script type="text/javascript" src="src/game.js"></script>

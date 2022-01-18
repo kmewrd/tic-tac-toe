@@ -23,7 +23,7 @@ This site was built by [Kim Ward](https://github.com/kmewrd) as a Mod 1 solo pro
 
   - Add a dark mode and light mode theme that users can toggle
   - Add local storage that allows wins and theme choice to persist after page reload
-  - Add the option increase the size of your board to 4 x 4, 5 x 5, and 6 x 6
+  - Add the option to increase the size of your board to 4 x 4, 5 x 5, and 6 x 6
 
 #### Design Inspiration
 
