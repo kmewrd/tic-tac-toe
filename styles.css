@@ -90,6 +90,13 @@ h2 {
 
 /* || Player Sidebar Styles */
 
+.player-sidebar {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .player-icon {
   margin-top: 250px;
   margin-bottom: 20px;
@@ -102,14 +109,6 @@ h2 {
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 900;
-}
-
-.player-left,
-.player-right {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* || Media Queries */
@@ -141,17 +140,16 @@ h2 {
     margin-bottom: 40px;
   }
 
+  .player-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
   .player-icon {
     margin-top: 20px;
     max-width: 125px;
     max-height: 125px;
-  }
-
-  .player-left,
-  .player-right {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-evenly;
   }
 
   .player-left {
