@@ -8,14 +8,21 @@ var playerLeftWins = document.querySelector(".js-player-left-wins");
 var playerRightWins = document.querySelector(".js-player-right-wins");
 var game;
 
-window.addEventListener('load', loadGame);
+startButton.addEventListener('load', loadGame);
 gameBoard.addEventListener('click', function(e) {
   renderToken(e);
 });
 
 function loadGame() {
-  game = new Game();
-  renderGameBoard();
+  if (gridThreeSelection.checked) {
+		game = new Game(3);
+	}
+	if (gridFourSelection.checked) {
+		game = new Game(4);
+  }
+	if (gridFiveSelection.checked) {
+		game = new Game(5);
+	}
 };
 
 function renderToken(e) {
