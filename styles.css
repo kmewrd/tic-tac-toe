@@ -21,6 +21,10 @@ h2 {
   font-weight: 600;
 }
 
+label {
+  font-size: 20px;
+}
+
 /* || Game Board Styles */
 
 .game {
@@ -74,6 +78,23 @@ h2 {
 
 .game-board-square--filled {
   animation: flash 0.5s ease;
+}
+
+.selection-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  background-color: #98c1d9;
+  border: ;
+  width: 500px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.grid-selection-heading {
+  margin: 0;
 }
 
 .hidden {
