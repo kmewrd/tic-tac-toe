@@ -104,8 +104,7 @@ h2 {
   max-height: 200px;
 }
 
-.player-right-wins,
-.player-left-wins {
+.player-wins {
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 900;

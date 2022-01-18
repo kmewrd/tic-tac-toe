@@ -1,7 +1,7 @@
 var gameBoard = document.querySelector(".game-board");
 var gameStatus = document.querySelector(".game-status");
-var playerLeftWins = document.querySelector(".player-left-wins");
-var playerRightWins = document.querySelector(".player-right-wins");
+var playerLeftWins = document.querySelector(".js-player-left-wins");
+var playerRightWins = document.querySelector(".js-player-right-wins");
 var game;
 
 window.addEventListener('load', loadGame);
