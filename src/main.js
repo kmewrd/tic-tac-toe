@@ -23,6 +23,13 @@ gameBoard.addEventListener('click', function(e) {
   renderToken(e);
 });
 
+newGameButton.addEventListener('click', function() {
+  show(selectionBox);
+  hide(gameBoard);
+  hide(gameStatus);
+  hide(newGameButton);
+});
+
 function loadGame() {
   if (gridThreeSelection.checked) {
 		game = new Game(3);
@@ -36,6 +43,8 @@ function loadGame() {
 		game = new Game(5);
     createGameBoard(5);
 	}
+  updateWins(game.playerLeft);
+  updateWins(game.playerRight);
 };
 
 function renderToken(e) {
