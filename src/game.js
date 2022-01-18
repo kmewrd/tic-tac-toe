@@ -139,17 +139,7 @@ class Game {
     this.playerLeft.squaresOccupied = [];
     this.playerRight.squaresOccupied = [];
     this.winner = null;
-    this.board = {
-      AA: null,
-      AB: null,
-      AC: null,
-      BA: null,
-      BB: null,
-      BC: null,
-      CA: null,
-      CB: null,
-      CC: null
-    };
+    Object.keys(this.board).forEach(key => this.board[key] = null);
   }
   switchStartingPlayer() {
     if (this.startingPlayer === "left") {
