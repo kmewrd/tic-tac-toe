@@ -5,6 +5,7 @@ var gridFiveSelection = document.getElementById("gridFive");
 var startButton = document.querySelector(".js-start-button");
 var gameBoard = document.querySelector(".js-game-board");
 var gameStatus = document.querySelector(".js-game-status");
+var newGameButton = document.querySelector(".js-new-button");
 var playerLeftWins = document.querySelector(".js-player-left-wins");
 var playerRightWins = document.querySelector(".js-player-right-wins");
 var game;
@@ -15,6 +16,7 @@ startButton.addEventListener('click', function(e) {
   hide(selectionBox);
   show(gameStatus);
   show(gameBoard);
+  show(newGameButton);
 });
 
 gameBoard.addEventListener('click', function(e) {
