@@ -1,5 +1,5 @@
-var gameBoard = document.querySelector(".game-board");
-var gameStatus = document.querySelector(".game-status");
+var gameBoard = document.querySelector(".js-game-board");
+var gameStatus = document.querySelector(".js-game-status");
 var playerLeftWins = document.querySelector(".js-player-left-wins");
 var playerRightWins = document.querySelector(".js-player-right-wins");
 var game;
