@@ -83,7 +83,6 @@ function restartGame() {
 
 function createGameBoard(gridSize) {
   if (gridSize === 3) {
-		gameBoard.classList.add("grid-3");
 		gameBoard.innerHTML = `
 	  <div class="game-board-row">
 	    <div class="game-board-square light-blue" id="AA"></div>
@@ -103,71 +102,69 @@ function createGameBoard(gridSize) {
 	  `
 	}
 	if (gridSize === 4) {
-		gameBoard.classList.add("grid-4");
 		gameBoard.innerHTML = `
 	  <div class="game-board-row">
-	    <div class="game-board-square light-blue" id="AA"></div>
-	    <div class="game-board-square mid-blue" id="AB"></div>
-	    <div class="game-board-square light-blue" id="AC"></div>
-			<div class="game-board-square mid-blue" id="AD"></div>
+	    <div class="game-board-square grid-4 light-blue" id="AA"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="AB"></div>
+	    <div class="game-board-square grid-4 light-blue" id="AC"></div>
+			<div class="game-board-square grid-4 mid-blue" id="AD"></div>
 	  </div>
 	  <div class="game-board-row">
-	    <div class="game-board-square mid-blue" id="BA"></div>
-	    <div class="game-board-square light-blue" id="BB"></div>
-	    <div class="game-board-square mid-blue" id="BC"></div>
-			<div class="game-board-square light-blue" id="BD"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="BA"></div>
+	    <div class="game-board-square grid-4 light-blue" id="BB"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="BC"></div>
+			<div class="game-board-square grid-4 light-blue" id="BD"></div>
 	  </div>
 	  <div class="game-board-row">
-	    <div class="game-board-square light-blue" id="CA"></div>
-	    <div class="game-board-square mid-blue" id="CB"></div>
-	    <div class="game-board-square light-blue" id="CC"></div>
-			<div class="game-board-square mid-blue" id="CD"></div>
+	    <div class="game-board-square grid-4 light-blue" id="CA"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="CB"></div>
+	    <div class="game-board-square grid-4 light-blue" id="CC"></div>
+			<div class="game-board-square grid-4 mid-blue" id="CD"></div>
 	  </div>
 		<div class="game-board-row">
-	    <div class="game-board-square mid-blue" id="DA"></div>
-	    <div class="game-board-square light-blue" id="DB"></div>
-	    <div class="game-board-square mid-blue" id="DC"></div>
-			<div class="game-board-square light-blue" id="DD"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="DA"></div>
+	    <div class="game-board-square grid-4 light-blue" id="DB"></div>
+	    <div class="game-board-square grid-4 mid-blue" id="DC"></div>
+			<div class="game-board-square grid-4 light-blue" id="DD"></div>
 	  </div>
 	  `
 	}
 	if (gridSize === 5) {
-		gameBoard.classList.add("grid-5");
 		gameBoard.innerHTML = `
 	  <div class="game-board-row">
-	    <div class="game-board-square light-blue" id="AA"></div>
-	    <div class="game-board-square mid-blue" id="AB"></div>
-	    <div class="game-board-square light-blue" id="AC"></div>
-			<div class="game-board-square mid-blue" id="AD"></div>
-			<div class="game-board-square light-blue" id="AE"></div>
+	    <div class="game-board-square grid-5 light-blue" id="AA"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="AB"></div>
+	    <div class="game-board-square grid-5 light-blue" id="AC"></div>
+			<div class="game-board-square grid-5 mid-blue" id="AD"></div>
+			<div class="game-board-square grid-5 light-blue" id="AE"></div>
 	  </div>
 	  <div class="game-board-row">
-	    <div class="game-board-square mid-blue" id="BA"></div>
-	    <div class="game-board-square light-blue" id="BB"></div>
-	    <div class="game-board-square mid-blue" id="BC"></div>
-			<div class="game-board-square light-blue" id="BD"></div>
-			<div class="game-board-square mid-blue" id="BE"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="BA"></div>
+	    <div class="game-board-square grid-5 light-blue" id="BB"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="BC"></div>
+			<div class="game-board-square grid-5 light-blue" id="BD"></div>
+			<div class="game-board-square grid-5 mid-blue" id="BE"></div>
 	  </div>
 	  <div class="game-board-row">
-	    <div class="game-board-square light-blue" id="CA"></div>
-	    <div class="game-board-square mid-blue" id="CB"></div>
-	    <div class="game-board-square coral" id="CC"></div>
-			<div class="game-board-square mid-blue" id="CD"></div>
-			<div class="game-board-square light-blue" id="CE"></div>
+	    <div class="game-board-square grid-5 light-blue" id="CA"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="CB"></div>
+	    <div class="game-board-square grid-5 coral-5" id="CC"></div>
+			<div class="game-board-square grid-5 mid-blue" id="CD"></div>
+			<div class="game-board-square grid-5 light-blue" id="CE"></div>
 	  </div>
 		<div class="game-board-row">
-	    <div class="game-board-square mid-blue" id="DA"></div>
-	    <div class="game-board-square light-blue" id="DB"></div>
-	    <div class="game-board-square mid-blue" id="DC"></div>
-			<div class="game-board-square light-blue" id="DD"></div>
-			<div class="game-board-square mid-blue" id="DE"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="DA"></div>
+	    <div class="game-board-square grid-5 light-blue" id="DB"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="DC"></div>
+			<div class="game-board-square grid-5 light-blue" id="DD"></div>
+			<div class="game-board-square grid-5 mid-blue" id="DE"></div>
 	  </div>
 		<div class="game-board-row">
-	    <div class="game-board-square light-blue" id="EA"></div>
-	    <div class="game-board-square mid-blue" id="EB"></div>
-	    <div class="game-board-square light-blue" id="EC"></div>
-			<div class="game-board-square mid-blue" id="ED"></div>
-			<div class="game-board-square light-blue" id="EE"></div>
+	    <div class="game-board-square grid-5 light-blue" id="EA"></div>
+	    <div class="game-board-square grid-5 mid-blue" id="EB"></div>
+	    <div class="game-board-square grid-5 light-blue" id="EC"></div>
+			<div class="game-board-square grid-5 mid-blue" id="ED"></div>
+			<div class="game-board-square grid-5 light-blue" id="EE"></div>
 	  </div>
 	  `
 	}

@@ -47,8 +47,8 @@ button {
 }
 
 .game-board {
-  width: 420px;
-  height: 420px;
+  width: 480px;
+  height: 480px;
   background-color: #98c1d9;
   outline: 6px solid #98c1d9;
   display: flex;
@@ -57,32 +57,29 @@ button {
   align-items: center;
 }
 
-.grid-three {
-  width: 420px;
-  height: 420px;
-}
-
-.grid-4 {
-  width: 560px;
-  height: 560px;
-}
-
-.grid-5 {
-  width: 600px;
-  height: 600px;
-}
-
 .game-board-row {
   display: flex;
 }
 
 .game-board-square {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 3px;
+}
+
+.grid-4 {
+  width: 120px;
+  height: 120px;
+  margin: 0;
+}
+
+.grid-5 {
+  width: 96px;
+  height: 96px;
+  margin: 0;
 }
 
 .light-blue {
@@ -96,6 +93,11 @@ button {
 .coral {
   background-color: #ee6c4d;
   outline: 6px solid #ffffff;
+}
+
+.coral-5 {
+  background-color: #ee6c4d;
+  outline: 4px solid #ffffff;
 }
 
 .token {
