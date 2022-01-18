@@ -52,8 +52,8 @@ function restartGame() {
     setTimeout(function() {
       game.resetBoard();
       game.switchStartingPlayer();
-      gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
       clearGameBoard();
+      gameStatus.innerText = `It's ${game.turn.id}'s turn!`;
     }, 3000);
   }
 };
