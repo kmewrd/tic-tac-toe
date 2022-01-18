@@ -5,6 +5,7 @@ class Game {
     this.startingPlayer = "left";
     this.turn = this.playerLeft;
     this.winner = null;
+    this.gridSize = gridSize;
     if (gridSize === 3) {
       this.board = {
         AA: null,
