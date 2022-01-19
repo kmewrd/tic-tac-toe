@@ -22,6 +22,15 @@ h2 {
   font-weight: 600;
 }
 
+input {
+  width: 15px;
+  height: 15px;
+}
+
+input:checked {
+  accent-color: #3d5a80;
+}
+
 label {
   font-size: 20px;
 }
