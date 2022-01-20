@@ -29,3 +29,17 @@ This site was built by [Kim Ward](https://github.com/kmewrd) as a Mod 1 solo pro
 
   - Board: [Tic Tac Toe by Palmi](https://dribbble.com/shots/5536601-Tic-Tac-Toe)
   - Colors: [Coolors](https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241)
+
+## Reflections
+
+I spent a lot of time on the front-end of the project figuring out which properties and methods were essential to my Classes, and which Class they needed to exist on. This prep work was probably the most challenging aspect of the project, but also the most insightful.
+
+#### Wins
+
+  - Using the `.every()` method to check win conditions.
+  - Getting my placeToken function to trigger a cascade of functions based on the status of the game, rather than calling each function individually.
+  - Refactoring - always super satisfying to clean up code!
+
+#### Challenges
+
+  - Getting the board squares styled with alternating colors and a bright middle square. A deceptively difficult task, this involved using outlines instead of borders, adding margins to my squares, and adding a background-color to my game board container.
